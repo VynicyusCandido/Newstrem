@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tema Seleção</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #222;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            color: #fff;
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            margin-bottom: 50px;
+        }
+
+        .box {
+            background-color: #4e45b8; /* cor roxa */
+            padding: 40px;
+            border-radius: 20px; /* bordas arredondadas */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .subtitulo {
+            color: #000; /* cor preta */
+            font-size: 20px; /* fonte menor */
+            margin-bottom: 20px;
+        }
+
+        .circle-container {
+            display: flex;
+            height: 200px;
+            gap: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .circle {
+            width: 150px;
+            height: 150px;
+            background-color: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .circle:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: scale(1.1);
+        }
+
+        .circle i {
+            font-size: 40px;
+            color: #fff;
+        }
+        .circle img {
+            width: 80px;
+            height: 80px;            
+            object-fit: contain;
+        }
+    </style>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+</head>
+<body>   
+
+    <div class="box">
+        <div class="subtitulo">Selecione seu tema</div>
+        <div class="circle-container">
+            <div class="circle"><img src="bola.png" alt="Bola"></div>
+            <div class="circle"><img src="mascara.png" alt="Máscara"></div>
+            <div class="circle"><img src="estatistica.png" alt="Estatística"></div>
+            <div class="circle"><img src="casa.png" alt="Casa"></div>
+        </div>
+    </div>
+
+</body>
+</html>
