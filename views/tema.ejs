@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tema Seleção</title>
-
     <style>
         body {
             margin: 0;
@@ -24,9 +23,9 @@
         }
 
         .box {
-            background-color: #4e45b8; /* cor roxa */
+            background-color: #4e45b8;
             padding: 40px;
-            border-radius: 20px; /* bordas arredondadas */
+            border-radius: 20px;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -35,8 +34,8 @@
         }
 
         .subtitulo {
-            color: #000; /* cor preta */
-            font-size: 20px; /* fonte menor */
+            color: #000;
+            font-size: 20px;
             margin-bottom: 20px;
         }
 
@@ -74,22 +73,43 @@
             height: 80px;            
             object-fit: contain;
         }
+
+        .user-info {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: white;
+        }
+
+        .logout-btn {
+            background: none;
+            border: none;
+            color: white;
+            text-decoration: underline;
+            cursor: pointer;
+            margin-left: 10px;
+        }
     </style>
-
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-
 </head>
 <body>   
+    <% if (usuario) { %>
+        <div class="user-info">
+            Bem-vindo, <%= usuario.usuario %>!
+            <form action="/auth/logout" method="POST" style="display: inline;">
+                <button type="submit" class="logout-btn">Sair</button>
+            </form>
+        </div>
+    <% } %>
 
     <div class="box">
         <div class="subtitulo">Selecione seu tema</div>
         <div class="circle-container">
-            <div class="circle"><img src="bola.png" alt="Bola"></div>
-            <div class="circle"><img src="mascara.png" alt="Máscara"></div>
-            <div class="circle"><img src="estatistica.png" alt="Estatística"></div>
-            <div class="circle"><img src="casa.png" alt="Casa"></div>
+            <div class="circle"><img src="/images/bola.png" alt="Bola"></div>
+            <div class="circle"><img src="/images/mascara.png" alt="Máscara"></div>
+            <div class="circle"><img src="/images/estatistica.png" alt="Estatística"></div>
+            <div class="circle"><img src="/images/casa.png" alt="Casa"></div>
         </div>
     </div>
-
 </body>
 </html>

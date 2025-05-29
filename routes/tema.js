@@ -1,8 +1,15 @@
 const express = require('express');
-const router = express.Router();
+const roteador = express.Router();
 
-router.get('/tema', (req, res) => {
-  res.render('tema');  // chama o tema.ejs na pasta views
+roteador.get('/', (req, res) => {
+  if (!req.session.usuario) {
+    return res.redirect('/');
+  }
+  
+  res.render('tema', {
+    titulo: 'Página Tema',
+    usuario: req.session.usuario
+  });
 });
 
-module.exports = router;
+module.exports = roteador;
